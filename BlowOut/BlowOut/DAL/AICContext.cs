@@ -17,6 +17,5 @@ namespace AwesomeInstrumentCompany.DAL
         //Data structure that stores data
         public DbSet<Client> Clients { get; set; }
         public DbSet<Instrument> Instruments { get; set; }
-        public DbSet<Client_Instrument> Clients_Instruments { get; set; }
     }
 }
