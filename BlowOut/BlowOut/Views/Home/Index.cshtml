@@ -1,10 +1,10 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Blow Out!";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+@*<div class="jumbotron">
+    <h1>Welcome to Blow Out!</h1>
+    <p class="lead">We blow our competitors out of the water.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
@@ -28,4 +28,94 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+</div>*@
+
+<main>
+    <link href="~/Content/instrument-landing.css" rel="stylesheet" />
+</main>
+
+    <!-- Navigation -->
+@*<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="http://placehold.it/150x50&text=Logo" alt="">
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>*@
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <div class="col-md-8">
+            <img class="img-responsive img-rounded" src="~/Content/img/cello_cover.jpg" alt="Cello Musician Cover">
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-4">
+            <h1>Begin Your Journey</h1>
+            <p>"<i>It's easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself</i>”.  - Johann Sebastian Bach</p>
+            <a class="btn btn-primary btn-lg" href="#">Start Today!</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <hr> <!-- Section Divider -->
+
+    <!-- /.row -->
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Rent an Instrument</h2>
+            <p>Not sure which instrument you'd like to play, still trying to figure out your favorite model, or just budgeting for you passion? Rent new and used instruments from us at reasonable prices to start today.</p>
+            <input type="button" class="btn btn-default" value="Rentals" onclick="location.href='@Url.Action("Index", "Rentals")'"/>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4">
+            <h2>Get To Know Us</h2>
+            <p>We're dedicated to giving you quality products, friendly service, and a worry-free experience in the music industry. From our office to the slopes, we're pretty fun and willing to help.</p>
+            <input type="button" class="btn btn-default" value="About" onclick="location.href='@Url.Action("About", "Home")'"/>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4">
+            <h2>We Listen</h2>
+            <p>Great customer service starts with listening. Having problems, confused about something, need to find something, or looking for the best dance club? Just let us know! We're ready to help.</p>
+            <input type="button" class="btn btn-default" value="Contact" onclick="location.href='@Url.Action("Index", "Contact")'"/>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
 </div>
+<!-- /.container -->
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
