@@ -126,6 +126,9 @@ namespace BlowOut.Controllers
             Client client = db.Clients.Find(id);
             db.Clients.Remove(client);
             db.SaveChanges();
+
+            db.Database.ExecuteSqlCommand("UPDATE Instrument SET ClientID = NULL WHERE (ClientID = " + id + ");");
+
             return RedirectToAction("Index");
         }
 

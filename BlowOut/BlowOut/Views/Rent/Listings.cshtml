@@ -1,9 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listings";
 }
 
 <main>
-    <link href="~/Content/Rent-mainpage.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/rentals-mainpage.css" rel="stylesheet" />
 </main>
 
 <!-- Page Content -->
@@ -11,7 +11,6 @@
     <div class="row">
 
         <div class="col-md-3">
-            <p class="lead">Awesome Instrument Company </p>
             <div class="list-group">
                 <a href='@Url.Action("Listings", "Rent", new { condition = "new" })' class="list-group-item @ViewBag.statusNew">Show New Pricing</a>
                 <a href='@Url.Action("Listings", "Rent", new { condition = "used" })' class="list-group-item @ViewBag.statusUsed">Show Used Pricing</a>

@@ -217,6 +217,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\about-page.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\Carousel\dance_back.jpg" />
@@ -246,6 +247,8 @@
     <Content Include="Content\img\Photographer.png" />
     <Content Include="Content\img\profile_square.jpg" />
     <Content Include="Content\img\toolbox-small.png" />
+    <Content Include="Content\instrument-landing.css" />
+    <Content Include="Content\rentals-mainpage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
