@@ -99,7 +99,7 @@ namespace BlowOut.Controllers
         }
 
         [HttpGet]
-        public ActionResult Rent(string description, int type)
+        public ActionResult Rent(string description, string type)
         {
             TempData["description"] = description;
             TempData["type"] = type;
@@ -115,7 +115,7 @@ namespace BlowOut.Controllers
                 db.Clients.Add(client);
                 db.SaveChanges();
 
-                int InstrumentID = db.Database.SqlQuery<int>("SELECT TOP 1 InstrumentID FROM dbo.Instrument WHERE (Description = '" + TempData["description"] + "') AND (type = " + TempData["type"] + "); ").FirstOrDefault<int>();
+                int InstrumentID = db.Database.SqlQuery<int>("SELECT TOP 1 InstrumentID FROM dbo.Instrument WHERE (Description = '" + TempData["description"] + "') AND (type = '" + TempData["type"] + "'); ").FirstOrDefault<int>();
 
                 if (InstrumentID > 0)
                 {
