@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Order Confirmation";
+}
+
+<h2>Order Confirmation</h2>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="well row">
+            <h1>Thank you, @ViewBag.cFirstName, for ordering your @ViewBag.iName!</h1>
+            <div class="clearfix"></div>
+            <img class="img-responsive col-sm-5 pull-right" src="@ViewBag.iImageURL" />
+            <p><b>OrderID:</b> @ViewBag.cID</p>
+            <p><b>Instrument Name: </b>@ViewBag.iName</p>
+            <p><b>Type:</b> @ViewBag.iType</p>
+            <p><b>Monthly Price:</b> $@ViewBag.iMonthlyPrice.00</p>
+            <p><b>Amount Paid after 18 Months:</b>  $@ViewBag.iPaidAfter18.00</p>
+        </div>
+        <a class="btn btn-primary" href="/" >Return to Home</a>
+    </div>
+</div>
+

@@ -201,6 +201,7 @@
     <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Controllers\RentController.cs" />
     <Compile Include="DAL\AICContext.cs" />
     <Compile Include="DAL\RentalsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -216,8 +217,38 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\about-page.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\Carousel\dance_back.jpg" />
+    <Content Include="Content\img\Carousel\dance_back_crop.jpg" />
+    <Content Include="Content\img\Carousel\Hiking_GoatRocks.jpg" />
+    <Content Include="Content\img\Carousel\Hiking_GoatRocks_crop.jpg" />
+    <Content Include="Content\img\Carousel\MountainBiking_crossing.jpg" />
+    <Content Include="Content\img\Carousel\MountainBiking_crossing_crop.jpg" />
+    <Content Include="Content\img\cello_cover.jpg" />
+    <Content Include="Content\img\dance_back_crop.jpg" />
+    <Content Include="Content\img\guitar-strings.jpg" />
+    <Content Include="Content\img\Hiking_GoatRocks_crop.jpg" />
+    <Content Include="Content\img\Instruments\clarinet_320.jpg" />
+    <Content Include="Content\img\Instruments\clarinet_800.jpg" />
+    <Content Include="Content\img\Instruments\flute_320.jpg" />
+    <Content Include="Content\img\Instruments\flute_800.jpg" />
+    <Content Include="Content\img\Instruments\saxophone_320.jpg" />
+    <Content Include="Content\img\Instruments\saxophone_800.jpg" />
+    <Content Include="Content\img\Instruments\trombone_320.jpg" />
+    <Content Include="Content\img\Instruments\trombone_800.jpg" />
+    <Content Include="Content\img\Instruments\trumpet_320.jpg" />
+    <Content Include="Content\img\Instruments\trumpet_800.jpg" />
+    <Content Include="Content\img\Instruments\tuba_320.jpg" />
+    <Content Include="Content\img\Instruments\tuba_800.jpg" />
+    <Content Include="Content\img\intro-bg.jpg" />
+    <Content Include="Content\img\MountainBiking_crossing_crop.jpg" />
+    <Content Include="Content\img\Photographer.png" />
+    <Content Include="Content\img\profile_square.jpg" />
+    <Content Include="Content\img\toolbox-small.png" />
+    <Content Include="Content\instrument-landing.css" />
+    <Content Include="Content\rentals-mainpage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,6 +320,10 @@
     <Content Include="Views\Rentals\Details.cshtml" />
     <Content Include="Views\Rentals\Index.cshtml" />
     <Content Include="Views\Rentals\Edit.cshtml" />
+    <Content Include="Views\Rent\Instrument.cshtml" />
+    <Content Include="Views\Rent\Listings.cshtml" />
+    <Content Include="Views\Rent\OrderConfirmation.cshtml" />
+    <Content Include="Views\Rent\Rent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
