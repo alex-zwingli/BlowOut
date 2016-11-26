@@ -21,12 +21,13 @@ namespace AwesomeInstrumentCompany.Models
         [StringLength(50, ErrorMessage = "Description is too long.")]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Please insert an instrument type: N = New, U = Used")]
-        [RegularExpression(@"[nu]{1,1}")]
-        public char Type { get; set; }
+        [Required(ErrorMessage = "Please insert an instrument type: New, Used")]
+        [ScaffoldColumn(true)]
+        [RegularExpression(@"(NEW)|(New)|(new)|(USED)|(Used)|(used)", ErrorMessage = "Please enter \"New\" or \"Used\".")]
+        public string Type { get; set; }
 
         [Required(ErrorMessage = "Please enter the monthly rental price for the instrument.")]
-        [DataType(DataType.Currency)]
+        [DataType(DataType.Currency, ErrorMessage = "Please enter a valid currentcy.")]
         public decimal Price { get; set; }
 
         [DisplayName("Client ID")]
