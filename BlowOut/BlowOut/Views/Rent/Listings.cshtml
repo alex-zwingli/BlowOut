@@ -1,0 +1,212 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <link href="~/Content/Rent-mainpage.css" rel="stylesheet" type="text/css" />
+</main>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Awesome Instrument Company </p>
+            <div class="list-group">
+                <a href='@Url.Action("Listings", "Rent", new { condition = "new" })' class="list-group-item @ViewBag.statusNew">Show New Pricing</a>
+                <a href='@Url.Action("Listings", "Rent", new { condition = "used" })' class="list-group-item @ViewBag.statusUsed">Show Used Pricing</a>
+            </div>
+            <p class="text-muted">After months, you own the instrument. If you return it at any time before 3 months, there will be a $200 re-stocking fee. If you return it after 3 months, you forfeit any equity in the instrument.</p>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12 hidden-xs">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="slide-image" src="~/Content/img/Instruments/trumpet_800.jpg" alt="trumpet">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/img/Instruments/trombone_800.jpg" alt="trombone">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/img/Instruments/tuba_800.jpg" alt="tuba">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/img/Instruments/flute_800.jpg" alt="flute">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/img/Instruments/clarinet_800.jpg" alt="clarinet">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/img/Instruments/saxophone_320.jpg" alt="saxophone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Trumpet -->
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/img/Instruments/trumpet_320.jpg" alt="trumpet">
+                        <div class="caption">
+                            <h4 class="pull-right">$@ViewBag.costTrumpet/mo</h4>
+                            <h4>
+                                <a href="/Rent/Instrument/Trumpet">Trumpet</a>
+                            </h4>
+                            <p>A brass musical instrument with a flared bell and a bright, penetrating tone.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">15 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trombone -->
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/img/Instruments/trombone_320.jpg" alt="trombone">
+                        <div class="caption">
+                            <h4 class="pull-right">$@ViewBag.costTrombone/mo</h4>
+                            <h4>
+                                <a href="/Rent/Instrument/Trombone">Trombone</a>
+                            </h4>
+                            <p>A brass wind instrument with different fundamental notes being made using a slider.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">12 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuba -->
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/img/Instruments/tuba_320.jpg" alt="Tuba">
+                        <div class="caption">
+                            <h4 class="pull-right">$@ViewBag.costTuba/mo</h4>
+                            <h4>
+                                <a href="/Rent/Instrument/Tuba">Tuba</a>
+                            </h4>
+                            <p>A  large brass wind instrument of bass pitch, with a broad bell typically facing upward.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">31 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flute -->
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/img/Instruments/flute_320.jpg" alt="Flute">
+                        <div class="caption">
+                            <h4 class="pull-right">$@ViewBag.costFlute/mo</h4>
+                            <h4>
+                                <a href="/Rent/Instrument/Flute">Flute</a>
+                            </h4>
+                            <p>A tubed wind instrument made with holes along it that are stopped by fingers/keys.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">6 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clarinet -->
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/img/Instruments/clarinet_320.jpg" alt="Clarinet">
+                        <div class="caption">
+                            <h4 class="pull-right">$@ViewBag.costClarinet/mo</h4>
+                            <h4>
+                                <a href="/Rent/Instrument/Clarinet">Clarinet</a>
+                            </h4>
+                            <p>a woodwind instrument with a single-reed mouthpiece and holes stopped by keys.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">18 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/img/Instruments/saxophone_320.jpg" alt="Saxophone">
+                        <div class="caption">
+                            <h4 class="pull-right">$@ViewBag.costSaxophone/mo</h4>
+                            <h4>
+                                <a href="/Rent/Instrument/Saxophone">Saxophone</a>
+                            </h4>
+                            <p>A member of a family of metal wind instruments with a single-reed mouthpiece.</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">17 Reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+<!-- /.container -->
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
