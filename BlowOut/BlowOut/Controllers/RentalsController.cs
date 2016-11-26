@@ -11,122 +11,130 @@ using BlowOut.Models;
 
 namespace BlowOut.Controllers
 {
-    public class InstrumentsController : Controller
+    public class RentalsController : Controller
     {
         private AICContext db = new AICContext();
 
-        // GET: Instruments
+        // GET: Rentals
         public ActionResult Index()
         {
-            return View(db.Instruments.ToList());
+
+            IEnumerable<Rentals> Rentals = db.Database.SqlQuery<Rentals>("SELECT * FROM Instrument INNER JOIN Client ON Instrument.ClientID = Client.ClientID;");
+
+            return View(Rentals);
         }
 
-        // GET: Instruments/Details/5
+        // GET: Rentals/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+
+            var rentals = db.Database.SqlQuery<Rentals>("SELECT * FROM Instrument INNER JOIN Client ON Instrument.ClientID = Client.ClientID WHERE InstrumentID = " + id + ";").FirstOrDefault();
+
+            if (rentals == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(rentals);
         }
 
-        // GET: Instruments/Create
+        // GET: Rentals/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Instruments/Create
+        // POST: Rentals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentID,Description,Type,Price,ClientID")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "InstrumentID,Description,Type,Price,ClientID,FirstName,LastName,Address,City,State,ZIP,Email,Phone")] Rentals rentals)
         {
             if (ModelState.IsValid)
             {
-                db.Instruments.Add(instrument);
+                db.Rentals.Add(rentals);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(instrument);
+            return View(rentals);
         }
 
-        // GET: Instruments/Edit/5
+        // GET: Rentals/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+            Client client = db.Clients.Find(id);
+            if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(client);
         }
 
-        // POST: Instruments/Edit/5
+        // POST: Rentals/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InstrumentID,Description,Type,Price,ClientID")] Instrument instrument, int InstrumentID)
+        public ActionResult Edit([Bind(Include = "InstrumentID,Description,Type,Price,ClientID,FirstName,LastName,Address,City,State,ZIP,Email,Phone")] Rentals client, int ClientID)
         {
-            instrument.InstrumentID = InstrumentID;
+            client.ClientID = ClientID;
 
             if (ModelState.IsValid)
             {
                 // Load current account from DB
-                var instrumentInDb = db.Instruments.Single(c => c.InstrumentID == instrument.InstrumentID);
+                var clientInDb = db.Clients.Single(c => c.ClientID == client.ClientID);
 
                 // Update the properties
-                db.Entry(instrumentInDb).CurrentValues.SetValues(instrument);
-
-                // Modify type capitalization
-                instrumentInDb.Type = instrumentInDb.Type.Substring(0, 1).ToUpper() + instrumentInDb.Type.Substring(1).ToLower();
+                db.Entry(clientInDb).CurrentValues.SetValues(client);
 
                 // Save the changes
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
-            return View(instrument);
+
+            // Return to view to display errors
+            return View(client);
         }
 
-        // GET: Instruments/Delete/5
+        // GET: Rentals/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+            Client client = db.Clients.Find(id);
+            if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(client);
         }
 
-        // POST: Instruments/Delete/5
+        // POST: Rentals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Instrument instrument = db.Instruments.Find(id);
-            db.Instruments.Remove(instrument);
+            Client client = db.Clients.Find(id);
+            db.Clients.Remove(client);
             db.SaveChanges();
+
+            db.Database.ExecuteSqlCommand("UPDATE Instrument SET ClientID = NULL WHERE (ClientID = " + id + ");");
+
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

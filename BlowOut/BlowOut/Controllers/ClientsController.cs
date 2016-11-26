@@ -6,8 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using AwesomeInstrumentCompany.DAL;
-using AwesomeInstrumentCompany.Models;
+using BlowOut.DAL;
+using BlowOut.Models;
 using System.Data.SqlClient;
 
 namespace BlowOut.Controllers

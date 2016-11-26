@@ -1,52 +1,64 @@
-﻿@model BlowOut.Models.Client
+﻿@model BlowOut.Models.Rentals
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-<h2>Delete</h2>
+<h2>Details</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Client</h4>
     <hr />
+    <!-- Instrument Information -->
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            $@Html.DisplayFor(model => model.InstrumentID) per month
+        </dd>
+    </dl>
+    <hr />
+    <!-- CLient Information -->
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
         <dd>
             @Html.DisplayFor(model => model.LastName)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Address)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.City)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.City)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.State)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.State)
         </dd>
@@ -54,7 +66,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.ZIP)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ZIP)
         </dd>
@@ -62,27 +73,21 @@
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Phone)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Phone)
         </dd>
 
+
+
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+<p>
+    @Html.ActionLink("Edit Client", "Edit", new { id = Model.InstrumentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

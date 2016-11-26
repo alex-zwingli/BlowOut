@@ -5,14 +5,16 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
-namespace AwesomeInstrumentCompany.Models
+namespace BlowOut.Models
 {
     [Table("Instrument")]
     public class Instrument
     {
         [Key]
         [ReadOnly(true)]
+        [HiddenInput(DisplayValue = false)]
         [DisplayName("Instrument ID")]
         public int InstrumentID { get; set; }
 

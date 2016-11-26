@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BlowOut.Models.Client>
+﻿@model IEnumerable<BlowOut.Models.Rentals>
 
 @{
     ViewBag.Title = "Index";
@@ -12,12 +12,24 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ClientID)
+        </th>*@
+        <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Address)
         </th>
         <th>
@@ -28,7 +40,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ZIP)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
@@ -41,12 +53,24 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ClientID)
+        </td>*@
+        <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
@@ -57,7 +81,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ZIP)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
@@ -65,8 +89,8 @@
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClientID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClientID }) |
+            @Html.ActionLink("Edit Client", "Edit", new { id=item.ClientID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InstrumentID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ClientID })
         </td>
     </tr>
