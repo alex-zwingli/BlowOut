@@ -2,21 +2,39 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace BlowOut.Models
 {
-    [Table("Client")]
-    public class Client
+    public class Rentals
     {
+        // Instrument Data
+
         [Key]
         [ReadOnly(true)]
+        [DisplayName("Instrument ID")]
+        public int? InstrumentID { get; set; }
+
+        [DataType(DataType.Text)]
+        [ReadOnly(true)]
+        [StringLength(50, ErrorMessage = "Description is too long.")]
+        public string Description { get; set; }
+
+        [ScaffoldColumn(true)]
+        [ReadOnly(true)]
+        [RegularExpression(@"(NEW)|(New)|(new)|(USED)|(Used)|(used)", ErrorMessage = "Please enter \"New\" or \"Used\".")]
+        public string Type { get; set; }
+
+        [DataType(DataType.Currency, ErrorMessage = "Please enter a valid currentcy.")]
+        [ReadOnly(true)]
+        public decimal Price { get; set; }
+
         [DisplayName("Client ID")]
-        [HiddenInput(DisplayValue = false)]
         public int? ClientID { get; set; }
+
+        // Client data
 
         //Each field is required
         [Required(ErrorMessage = "Please enter a first name.")]
@@ -62,5 +80,8 @@ namespace BlowOut.Models
         [RegularExpression(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}", ErrorMessage = "Please enter a valid phone number: (000) 000-0000")]
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+
+
+
     }
 }

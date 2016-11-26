@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AwesomeInstrumentCompany.Models;
+using BlowOut.Models;
 using System.Data.Entity;
 
-namespace AwesomeInstrumentCompany.DAL
+namespace BlowOut.DAL
 {
     public class AICContext : DbContext 
     {
@@ -17,6 +17,7 @@ namespace AwesomeInstrumentCompany.DAL
         //Data structure that stores data
         public DbSet<Client> Clients { get; set; }
         public DbSet<Instrument> Instruments { get; set; }
-        public DbSet<Client_Instrument> Clients_Instruments { get; set; }
+
+        public System.Data.Entity.DbSet<BlowOut.Models.Rentals> Rentals { get; set; }
     }
 }
