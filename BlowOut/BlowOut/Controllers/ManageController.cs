@@ -11,6 +11,7 @@ using BlowOut.Models;
 namespace BlowOut.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

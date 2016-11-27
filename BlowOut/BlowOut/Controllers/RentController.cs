@@ -10,8 +10,10 @@ using System.Data.Entity;
 
 namespace BlowOut.Controllers
 {
+    [RequireHttps]
     public class RentController : Controller
     {
+
         private AICContext db = new AICContext();
 
         // GET: Rent
