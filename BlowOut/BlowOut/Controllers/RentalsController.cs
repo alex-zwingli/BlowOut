@@ -11,6 +11,7 @@ using BlowOut.Models;
 
 namespace BlowOut.Controllers
 {
+    [RequireHttps]
     public class RentalsController : Controller
     {
         private AICContext db = new AICContext();

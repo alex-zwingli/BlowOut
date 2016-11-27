@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(BlowOut.Startup))]
+
 namespace BlowOut
 {
     public partial class Startup
