@@ -227,6 +227,7 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstrumentsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Controllers\RentController.cs" />
@@ -378,6 +379,7 @@
     <Content Include="Views\Rent\Rent.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -385,6 +387,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModalLogin.BL\ModalLogin.BL.csproj">
+      <Project>{2017d72c-0188-452c-9526-b9e5c6edfb71}</Project>
+      <Name>ModalLogin.BL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
