@@ -13,6 +13,7 @@ namespace BlowOut
 {
     public partial class Startup
     {
+        /*
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -74,7 +75,7 @@ namespace BlowOut
             app.UseGoogleAuthentication(
                 clientId: "652994850001-bgshjqiponr09o75jjrfebbjh7kbiruh.apps.googleusercontent.com",
                 clientSecret: "yqBA65jCHS4T6dtE-WFfNtF7"
-                );
-        }
+                ); 
+        } */
     }
 }

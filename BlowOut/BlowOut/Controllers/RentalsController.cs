@@ -11,13 +11,14 @@ using BlowOut.Models;
 
 namespace BlowOut.Controllers
 {
+    [Authorize]
     [RequireHttps]
     public class RentalsController : Controller
     {
         private AICContext db = new AICContext();
 
         // GET: Rentals
-        public ActionResult Index()
+        public ActionResult UpdateData()
         {
 
             IEnumerable<Rentals> Rentals = db.Database.SqlQuery<Rentals>("SELECT * FROM Instrument INNER JOIN Client ON Instrument.ClientID = Client.ClientID;");

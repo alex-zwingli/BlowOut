@@ -357,7 +357,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Clients\Create.cshtml" />
     <Content Include="Views\Clients\Delete.cshtml" />
     <Content Include="Views\Clients\Details.cshtml" />
@@ -371,7 +370,7 @@
     <Content Include="Views\Rentals\Create.cshtml" />
     <Content Include="Views\Rentals\Delete.cshtml" />
     <Content Include="Views\Rentals\Details.cshtml" />
-    <Content Include="Views\Rentals\Index.cshtml" />
+    <Content Include="Views\Rentals\UpdateData.cshtml" />
     <Content Include="Views\Rentals\Edit.cshtml" />
     <Content Include="Views\Rent\Instrument.cshtml" />
     <Content Include="Views\Rent\Listings.cshtml" />
@@ -379,7 +378,7 @@
     <Content Include="Views\Rent\Rent.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
